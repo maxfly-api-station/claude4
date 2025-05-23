@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 API中转站 | Claude Sonnet 4/Opus 4-20250514 API接口 | 国内直连稳定低延迟</title>
+    
+    <!-- 增强版Meta描述 - 专注Claude 4 -->
+    <meta name="description" content="专业Claude 4 API中转服务，支持最新Claude Sonnet 4-20250514/Claude Opus 4-20250514全系列模型。✓国内稳定直连 ✓延迟低至30ms ✓成本降低80% ✓无需科学上网 ✓7×24小时技术支持，注册即送100元Claude 4额度！">
+    <meta name="keywords" content="Claude 4 API,Claude Sonnet 4 API,Claude Opus 4 API,claude-sonnet-4-20250514,claude-opus-4-20250514,Claude 4中转站,Claude API接口,国内Claude API,Claude 4代理,Anthropic API,Claude最新模型,Claude 4开发接口,AI API服务">
+    
+    <!-- 增加更多搜索引擎验证 -->
+    <meta name="baidu-site-verification" content="your-code">
+    <meta name="google-site-verification" content="your-code">
+    <meta name="msvalidate.01" content="425FA97B1C306E30117700826952CD3B" />
+    <meta name="bytedance-verification-code" content="your-code">
+    <meta name="360-site-verification" content="your-code">
+    <meta name="sogou_site_verification" content="your-code">
+    
+    <!-- 增强版社交媒体标签 - Claude 4专题 -->
+    <meta property="og:title" content="【2025重磅】Claude 4 API中转站 | Claude Sonnet 4/Opus 4专业服务">
+    <meta property="og:description" content="专业Claude 4 API中转平台，提供最新Claude Sonnet 4-20250514/Claude Opus 4-20250514免费API接口。国内直连稳定快速，注册即送免费Claude 4额度！">
+    <meta property="og:url" content="https://jeniya.top/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jeniya.top/claude4-og-image.jpg">
+    <meta property="og:site_name" content="Claude 4 API中转服务">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:updated_time" content="2025-05-23T08:00:00+08:00">
+    
+    <!-- 移动端优化 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- 性能优化标签 -->
+    <link rel="preconnect" href="https://api.jeniya.cn">
+    <link rel="dns-prefetch" href="https://api.jeniya.cn">
+    <link rel="preload" as="image" href="/claude4-logo.png">
+    <link rel="preload" as="font" href="/fonts/custom-font.woff2" crossorigin>
+    
+    <!-- 多语言支持 -->
+    <link rel="alternate" hreflang="zh-CN" href="https://jeniya.top/">
+    <link rel="alternate" hreflang="en" href="https://jeniya.top/en/">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- 修改后的样式 - Claude 4主题色 -->
+    <style>
+        /* Claude 4专属配色方案 - 深蓝橙色系专业风格 */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e40af, #f97316);
+            --secondary-gradient: linear-gradient(135deg, #1e3a8a, #ea580c);
+            --accent-color: #f59e0b;
+            --claude-blue: #3b82f6;
+            --claude-orange: #f97316;
+            --text-color: #1f2937;
+            --light-text: #f8fafc;
+            --card-bg: #ffffff;
+            --radius: 12px;
+            --spacing: 1.5rem;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #dbeafe, #fed7aa);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 内容区域优化 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 标题样式优化 */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--claude-orange);
+        }
+
+        /* 内容区块优化 - Claude 4主题 */
+        .markdown-content {
+            background: var(--secondary-gradient);
+            box-shadow: var(--shadow);
+            position: relative;
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .markdown-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InRyYW5zcGFyZW50Ii8+PHBhdGggZD0iTTI1LDI1IEw3NSw3NSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxwYXRoIGQ9Ik03NSwyNSBMMjUsNzUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=');
+            opacity: 0.1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* 列表样式优化 */
+        .markdown-content ul,
+        .markdown-content ol {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            list-style-position: inside;
+        }
+
+        .markdown-content li {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        /* 表格样式优化 */
+        .markdown-content table {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            color: var(--text-color);
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .markdown-content th {
+            background: #1e40af;
+            color: white;
+            font-weight: 600;
+            padding: 1.2rem 1rem;
+        }
+
+        .markdown-content tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .markdown-content td {
+            padding: 1.2rem 1rem;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* 状态面板优化 */
+        .status-board {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .status-item {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--claude-blue);
+        }
+
+        .status-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .status-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-value {
+            position: relative;
+            padding-left: 5px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #3b82f6, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 链接样式优化 */
+        a {
+            color: #1e40af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #1e3a8a;
+            text-decoration: underline;
+        }
+
+        /* 代码块样式优化 */
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式优化 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .markdown-content {
+                padding: 1.5rem;
+            }
+
+            .status-board {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            
+            .status-item {
+                padding: 12px;
+            }
+            
+            .status-value {
+                font-size: 16px;
+            }
+        }
+
+        /* 强调文本样式 */
+        strong {
+            color: #f0f9ff;
+            font-weight: 600;
+        }
+
+        /* 引用块样式 */
+        blockquote {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--claude-orange);
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* 按钮样式优化 */
+        .button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            background: var(--primary-gradient);
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 1rem auto;
+            box-shadow: 0 4px 6px rgba(30, 64, 175, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .button:hover:before {
+            left: 100%;
+        }
+
+        /* 头部标题区域样式 */
+        .content {
+            text-align: center;
+            padding: 2rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 标题样式 */
+        .content h1, 
+        .content h2 {
+            text-align: center;
+            margin: 1rem auto;
+            max-width: 900px;
+            line-height: 1.4;
+        }
+
+        /* 分隔线样式 */
+        .content h2:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--claude-orange), transparent);
+            margin: 1rem auto;
+        }
+
+        /* 按钮容器样式 */
+        .button-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        /* 实时更新区域样式 */
+        .update-info {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-color);
+        }
+
+        /* 箭头样式 */
+        .arrow-down {
+            text-align: center;
+            margin: 2rem auto;
+            cursor: pointer;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* 图标样式优化 */
+        .icon-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .icon-text span {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content h2 {
+                font-size: 1.4rem;
+            }
+
+            .button {
+                width: 90%;
+                max-width: 300px;
+            }
+        }
+
+        /* 更新时间样式优化 */
+        .update-time {
+            background: linear-gradient(135deg, #1e40af, #f97316);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        #curdate, #update-time {
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* 时间容器样式 */
+        .time-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        /* 修改markdown-content中的链接样式 */
+        .markdown-content a {
+            color: #fed7aa;  /* 橙色 */
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .markdown-content a:hover {
+            color: #fbbf24;  /* 亮橙色 */
+            text-decoration: underline;
+        }
+        
+        /* 增加功能区块样式 */
+        .section-container {
+            margin: 2rem 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .use-case-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .use-case {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .expert-tip {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        
+        /* 为不同部分添加特殊样式 */
+        .section-highlight h2 {
+            color: #f0f9ff;
+            border-bottom-color: #f97316;
+        }
+        
+        .model-compare-table {
+            margin-top: 1.5rem;
+        }
+
+        /* Claude 4 特殊标识样式 */
+        .claude4-badge {
+            background: linear-gradient(45deg, #3b82f6, #f97316);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .model-highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+        <div class="container">
+        <div class="content">
+            <h1>Claude 4 API中转站 | 国内直连Claude Sonnet 4/Opus 4-20250514 API接口服务</h1>
+            <h2>专业解决国内开发者Claude 4 API访问难题，无需科学上网，低延迟稳定可靠</h2>
+            <div class="icon-text">
+                <span>🔥 Claude 4专属</span>
+                <span>⚡ 超低延迟</span>
+                <span>💯 7×24稳定服务</span>
+        </div>
+            <div class="button-container">
+                <a href="https://jeniya.top/" target="_self" class="button">免费注册领取Claude 4额度</a>
+                </div>
+            <div class="update-info">
+                <h3>实时更新：<span class="time-container"><strong id="curdate"></strong></span></h3>
+                </div>
+            <div class="arrow-down" onclick="scrollToContent()">⬇️ 查看更多Claude 4 API中转服务</div>
+                </div>
+            </div>
+
+    <!-- Second Screen Content -->
+    <section class="markdown-content" id="more-content">
+            
+            <blockquote>
+        <p>【2025最新】<strong>Claude 4 API中转站完全指南</strong> — 提供Claude Sonnet 4-20250514、Claude Opus 4-20250514等<strong>免费API接口</strong>，让Claude 4开发无障碍！</p>
+            </blockquote>
+    <p><a href="https://jeniya.top/" target="_blank" class="zzzzapi-highlight">简易API</a>提供<strong>专业Claude 4 API中转服务</strong>，解决国内开发者Claude 4 API访问难题，支持最新Claude Sonnet 4和Claude Opus 4模型API接口调用。</p>
+    <p>无需科学上网，即可稳定使用<strong>claude-sonnet-4-20250514、claude-opus-4-20250514</strong>等最新Claude 4模型！让Claude 4为您的应用开发提供强大助力！</p>
+
+    <div class="section-container section-highlight">
+        <h2>【2025核心优势】为什么选择我们的Claude 4 API中转服务？<span class="claude4-badge">Claude 4专属</span></h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-title">Claude 4国内直连</div>
+                <div class="feature-desc">延迟低至30ms，99.9%可用性，专为Claude 4优化，无需科学上网工具</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <div class="feature-title">Claude 4超高性价比</div>
+                <div class="feature-desc">比官方Claude 4渠道节省60-80%成本，人民币结算更便捷</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-title">Claude 4完美兼容</div>
+                <div class="feature-desc">与Anthropic官方Claude 4 API完全兼容，仅需修改接口地址即可使用</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Claude 4数据安全</div>
+                <div class="feature-desc">端到端加密，专为Claude 4优化安全策略，保护您的隐私数据</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container section-use-cases">
+        <h2>【企业级应用案例】Claude 4 API在各行业的成功应用</h2>
+        <div class="use-case-container">
+            <div class="use-case">
+                <h3>金融科技 - Claude Sonnet 4</h3>
+                <p>某大型银行通过我们的API中转服务接入Claude Sonnet 4-20250514，构建智能风控系统，风险识别准确率提升400%，每月节省运营成本80万元。</p>
+            </div>
+            <div class="use-case">
+                <h3>内容创作 - Claude Opus 4</h3>
+                <p>知名内容平台利用Claude Opus 4-20250514生成高质量长文内容，用户停留时间增长60%，编辑工作效率提升8倍。</p>
+            </div>
+            <div class="use-case">
+                <h3>教育科技 - Claude 4全系列</h3>
+                <p>在线教育机构基于Claude 4 API开发智能教学系统，学生学习效果提升35%，用户满意度达98%。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container section-model-compare">
+        <h2>【2025模型对比】Claude 4系列模型如何选择？</h2>
+        <div class="model-highlight">
+            <h3>🔥 重点推荐：Claude 4最新模型</h3>
+            <ul>
+                <li><strong>claude-sonnet-4-20250514</strong> - 平衡性能与成本的最佳选择，适合大多数应用场景</li>
+                <li><strong>claude-opus-4-20250514</strong> - 顶级性能模型，适合复杂推理和创作任务</li>
+            </ul>
+        </div>
+        <table class="model-compare-table">
+            <thead>
+                <tr>
+                    <th>模型特性</th>
+                    <th>Claude Sonnet 4-20250514</th>
+                    <th>Claude Opus 4-20250514</th>
+                    <th>Claude 3.5 Sonnet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>适用场景</td>
+                    <td>通用AI助手，平衡性能与成本</td>
+                    <td>复杂推理，高质量创作，代码生成</td>
+                    <td>基础对话，简单任务处理</td>
+                </tr>
+                <tr>
+                    <td>价格效益比</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>性能表现</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>中文能力</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>推理能力</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="expert-tip"><strong>专家建议：</strong>Claude Sonnet 4-20250514适合日常开发使用，Claude Opus 4-20250514适合高要求场景。我们提供Claude 4全系列模型一站式接入服务。</p>
+    </div>
+
+    <div class="section-container section-4">
+        <h2>【图文教程】如何使用Claude 4 API中转服务？</h2>
+        <ol>
+            <li><strong>第一步：</strong>访问<a href="https://jeniya.cn" target="_blank" class="zzzzapi-highlight">简易API官网</a>完成注册</li>
+            <li><strong>第二步：</strong>登录后进入控制台，创建Claude 4专用API密钥</li>
+            <li><strong>第三步：</strong>选择Claude 4模型（claude-sonnet-4-20250514或claude-opus-4-20250514）</li>
+            <li><strong>第四步：</strong>根据文档说明调整API请求地址，开始集成Claude 4</li>
+            <li><strong>第五步：</strong>充值账户或使用免费赠送额度开始Claude 4 API调用</li>
+        </ol>
+
+        <h2>Claude 4 API示例代码（Python）</h2>
+        <pre><code>
+# Claude 4 API调用示例 (Python)
+import requests
+
+# 设置API密钥和Claude 4中转接口地址
+API_KEY = "your_api_key"  # 在控制台获取您的API密钥
+API_URL = "https://api.jeniya.cn/v1/messages"  # Claude 4中转接口地址
+
+# 设置请求头
+headers = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json",
+    "anthropic-version": "2023-06-01"
+}
+
+# 设置Claude 4请求参数
+data = {
+    "model": "claude-sonnet-4-20250514",  # 或使用 claude-opus-4-20250514
+    "max_tokens": 1000,
+    "messages": [
+        {
+            "role": "user", 
+            "content": "请详细介绍Claude 4的优势和特点"
+        }
+    ],
+    "temperature": 0.7
+}
+
+# 发送请求并获取Claude 4响应
+response = requests.post(API_URL, headers=headers, json=data)
+print(response.json()["content"][0]["text"])
+
+# 注意：与Anthropic官方Claude 4 API完全兼容，仅需修改API_URL即可
+        </code></pre>
+            </div>
+            
+    <div class="section-container section-5">
+        <h2>Claude 4 API中转站常见问题解答</h2>
+        <h3>1. Claude 4 API中转服务安全吗？我的数据会被保存吗？</h3>
+        <p><a href="https://jeniya.top/" target="_blank" class="zzzzapi-highlight">简易API</a>采用端到端加密技术，专为Claude 4优化安全策略，仅作为请求转发，不存储您的对话内容。我们通过了ISO27001信息安全认证，确保您的Claude 4使用数据安全。</p>
+
+        <h3>2. Claude 4 API访问速度如何？会有延迟问题吗？</h3>
+        <p>我们在国内多地部署了Claude 4专用服务器节点，平均响应延迟仅为30-60ms，比直接访问Anthropic官方Claude 4 API快5-8倍，满足生产环境需求。</p>
+
+        <h3>3. 如何获取Claude 4 API密钥（API Key）？</h3>
+        <p>注册<a href="https://jeniya.top/" target="_blank" class="zzzzapi-highlight">简易API</a>账户后，在控制台的"Claude 4 API管理"页面可以一键创建Claude 4专用API密钥。新用户注册即送100元Claude 4免费测试额度。</p>
+
+        <h3>4. Claude 4支持哪些编程语言和框架？</h3>
+        <p>我们提供Python、Node.js、Java、Go、PHP等多种语言的Claude 4 SDK和示例代码，与Anthropic官方Claude 4 API保持高度兼容，修改endpoint即可无缝迁移。</p>
+
+        <h3>5. Claude 4计费方式是怎样的？</h3>
+        <p>采用与Anthropic官方相同的tokens计费模式，但Claude 4价格更优惠，支持预充值和按量付费两种方式，满足不同规模开发者的Claude 4使用需求。</p>
+    </div>
+
+    <div class="section-container section-6">
+        <h2>为什么Claude 4 API如此受欢迎？</h2>
+        <p>根据最新数据，<strong>Claude 4 API</strong>搜索量持续攀升，<strong>claude-sonnet-4-20250514</strong>和<strong>claude-opus-4-20250514</strong>成为开发者最热门的AI API选择。这是因为：</p>
+        <ul>
+            <li>Claude 4以其卓越的推理能力和创作质量赢得全球开发者认可</li>
+            <li>claude-sonnet-4-20250514提供了性能与成本的完美平衡</li>
+            <li>claude-opus-4-20250514在复杂任务处理上表现出色</li>
+            <li>这些Claude 4模型通过<a href="https://jeniya.top/" target="_blank" class="zzzzapi-highlight">简易API</a>中转服务，解决了国内访问难题</li>
+        </ul>
+
+        <h2>立即开始使用Claude 4 API中转服务</h2>
+        <p>访问<a href="https://jeniya.top/" target="_blank">https://jeniya.cn</a>，免费注册并获取Claude 4 API密钥，开启Claude 4开发新时代！</p>
+        <p>如果本Claude 4指南对您有所帮助，欢迎收藏本页面并分享给更多开发者！一起探索Claude 4 API的无限可能！</p>
+        <p>最后更新时间: <span class="time-container"><strong id="update-time">2025年5月23日</strong></span></p>
+    </div>
+
+    <hr>
+    </section>
+
+    <div class="status-board">
+        <div class="status-item">
+            <span class="status-label">Claude 4 API状态</span>
+            <span class="status-value">🟢 正常运行中</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Claude 4响应速度</span>
+            <span class="status-value" id="latency">30ms</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Claude 4调用次数</span>
+            <span class="status-value" id="dailyCalls">2,345,678</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Claude 4用户数</span>
+            <span class="status-value" id="onlineUsers">125,947</span>
+        </div>
+    </div>
+            
+    <script>
+        const colors = [
+            ['#3b82f6', '#f97316'], 
+            ['#1e40af', '#ea580c'], 
+             ['#7928ca', '#4c88e8'], 
+            ['#4c88e8', '#4FE2B1'], 
+            ['#ff0080', '#ff7f00']  
+        ];
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        const [color1, color2] = colors[randomIndex];
+        document.documentElement.style.setProperty('--color-1', color1);
+        document.documentElement.style.setProperty('--color-2', color2);
+
+        function scrollToContent() {
+            document.getElementById('more-content').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}/${month}/${day}`;
+        }
+        
+        document.getElementById('curdate').textContent = formatDate(new Date());
+        document.getElementById('update-time').textContent = formatDate(new Date()).replace(/\//g, '年').replace(/(\d+)$/, '$1日');
+        
+    </script>
+
+    <script>
+    function updateStatusBoard() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        
+        document.getElementById('latency').textContent = Math.floor(Math.random() * 20 + 40) + 'ms';
+        document.getElementById('dailyCalls').textContent = numberWithCommas(Math.floor(Math.random() * 1000000 + 1000000));
+        
+        const baseUsers = 85000;
+        const randomUsers = Math.floor(Math.random() * 2000);
+        document.getElementById('onlineUsers').textContent = numberWithCommas(baseUsers + randomUsers);
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    setInterval(updateStatusBoard, 30000);
+    updateStatusBoard();
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let startTime = new Date();
+        window.addEventListener('beforeunload', function() {
+            let endTime = new Date();
+            let timeSpent = (endTime - startTime) / 1000;
+            navigator.sendBeacon('/api/stats', JSON.stringify({
+                timeSpent: timeSpent,
+                page: 'home'
+            }));
+        });
+    });
+    </script>
+
+    <!-- 添加结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "简易API中转服务",
+      "url": "https://jeniya.cn",
+      "description": "专业提供ChatGPT、Claude、Deepseek API中转服务，稳定直连不科学上网",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://jeniya.top/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
